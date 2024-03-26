@@ -47,6 +47,8 @@ jobs:
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
           echo "MALICIOUS_HOST=https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt" >> $GITHUB_ENV
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
+          echo "RULE_TORRENT_WEBSITE=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt" >> $GITHUB_ENV
+          echo "RULE_TORRENT_TRACKER=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-trackres.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout
@@ -75,7 +77,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: "1.22"
           cache-dependency-path: ./custom/go.sum
 
       - name: Get geoip.dat relative files
@@ -112,7 +114,7 @@ jobs:
         run: |
           curl -sSL ${CUSTOM_DIRECT} | perl -ne '/^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > direct-reserve.txt
           curl -sSL ${CUSTOM_PROXY} | grep -Ev ":@cn" | perl -ne '/^((full|regexp|keyword):[^:]+)(\n$|:@.+)/ && print "$1\n"' | sort --ignore-case -u > proxy-reserve.txt
-          
+
       - name: Add proxy, direct and reject domains from "hidden" branch to appropriate temp files
         run: |
           cat ./resouces/proxy.txt >> temp-proxy.txt
@@ -210,6 +212,10 @@ jobs:
           wget -O rule-malicious.txt $MALICIOUS_HOST
           wget -O ./community/data/bank-id $RULE_BANK_ID
           wget -O bank-id.txt $RULE_BANK_ID
+          wget -O ./community/data/torrent-website $RULE_TORRENT_WEBSITE
+          wget -O torrent-website.txt $RULE_TORRENT_WEBSITE
+          wget -O ./community/data/torrent-tracker $RULE_TORRENT_TRACKER
+          wget -O torrent-tracker.txt $RULE_TORRENT_TRACKER
 
       - name: Filter and save d3ward.txt
         run: |
@@ -229,7 +235,6 @@ jobs:
               for line in filtered_lines:
                   file.write(line + "\n")
           EOF
-
 
       - name: merge 'ios_rule_script/SteamCN'
         env:
@@ -325,7 +330,6 @@ jobs:
           wget https://github.com/IrineSistiana/mosdns/releases/download/v4.5.3/mosdns-linux-amd64.zip -O mosdns.zip && unzip mosdns.zip
           chmod 755 mosdns sing-box convert.sh && ./convert.sh
           rm mosdns* sing-box* convert.sh geoip.dat geosite.db LICENSE README.md config.yaml
-
 
       - name: Convert geo-lite to sing-rule-set
         env:
@@ -432,30 +436,29 @@ jobs:
 
       - name: Git push assets to "sing-rule" branch
         run: |
-            cd sing-rule || exit 1
-            ls
-            git init
-            git config --local user.name "github-actions[bot]"
-            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git checkout -b sing
-            git add .
-            git commit -m "Released on ${{ env.BUILDTIME }}"
-            git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-            git push -f -u origin sing
+          cd sing-rule || exit 1
+          ls
+          git init
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b sing
+          git add .
+          git commit -m "Released on ${{ env.BUILDTIME }}"
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f -u origin sing
 
       - name: Git push assets to "meta-rule" branch
         run: |
-            cd meta-rule || exit 1
-            ls
-            git init
-            git config --local user.name "github-actions[bot]"
-            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git checkout -b meta
-            git add .
-            git commit -m "Released on ${{ env.BUILDTIME }}"
-            git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-            git push -f -u origin meta
-
+          cd meta-rule || exit 1
+          ls
+          git init
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b meta
+          git add .
+          git commit -m "Released on ${{ env.BUILDTIME }}"
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f -u origin meta
 
       - name: Purge jsdelivr CDN
         run: |
