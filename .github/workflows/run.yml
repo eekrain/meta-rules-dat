@@ -167,7 +167,7 @@ jobs:
           wget -O ./community/data/rule-streaming $RULE_STREAMING
           wget -O ./community/data/rule-urltest $URLTEST
           wget -O ./community/data/rule-speedtest $RULE_SPEEDTEST
-          wget -O ./community/data/rule-ipcheck $RULE_IPCHECKz
+          wget -O ./community/data/rule-ipcheck $RULE_IPCHECK
 
           # Process my own addition
           curl -sSL $RULE_BLOCKLIST | perl -ne '/^server=\/([^\/]+)\// && print "full:$1\n"' > ./community/data/rule-blocklist
