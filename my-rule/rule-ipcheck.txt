@@ -123,6 +123,7 @@ regexp:ip.*info|info.*ip
 regexp:ip.*data|data.*ip
 regexp:ip.*who|who.*ip
 regexp:ip.*my|my.*ip
+regexp:api.*who|who.*api
 regexp:ip.*2|2.*ip
 regexp:ip.*4|4.*ip
 regexp:ip.*6|6.*ip
