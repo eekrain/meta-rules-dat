@@ -170,7 +170,7 @@ jobs:
           wget -O ./community/data/rule-ipcheck $RULE_IPCHECK
 
           # Process my own addition
-          curl -sSL $URL | grep -Ev '^#|^$' | awk '{print "full:"$1}' >./community/data/rule-blocklist
+          curl -sSL $RULE_BLOCKLIST | grep -Ev '^#|^$' | awk '{print "full:"$1}' >./community/data/rule-blocklist
           wget -O ./community/data/rule-torrent-tracker $RULE_TORRENT_TRACKER
           wget -O ./community/data/rule-torrent-website $RULE_TORRENT_WEBSITE
 
