@@ -118,16 +118,16 @@ keyword:dns-leak
 keyword:vpn
 
 #regexp
-regexp:ip.*api|api.*ip
-regexp:ip.*info|info.*ip
-regexp:ip.*data|data.*ip
-regexp:ip.*who|who.*ip
 regexp:ip.*my|my.*ip
-regexp:api.*who|who.*api
+regexp:ip.*me|me.*ip
 regexp:ip.*2|2.*ip
 regexp:ip.*4|4.*ip
 regexp:ip.*6|6.*ip
 regexp:what.*ip
 regexp:what.*my
 regexp:ip.*\.io
-regexp:ip.*\.me
+regexp:ip.*api|api.*ip
+regexp:ip.*info|info.*ip
+regexp:ip.*data|data.*ip
+regexp:ip.*who|who.*ip
+regexp:api.*who|who.*api
