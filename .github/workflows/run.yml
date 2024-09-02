@@ -34,7 +34,7 @@ jobs:
           echo "RULE_STREAMING=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
           echo "URLTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
-          echo "RULE_IPCHECK=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_ipcheck.txt" >> $GITHUB_ENV
+          echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
 
           # My own addition
           echo "RULE_BLOCKLIST=https://raw.githubusercontent.com/pengelana/blocklist/master/src/domain.txt" >> $GITHUB_ENV
