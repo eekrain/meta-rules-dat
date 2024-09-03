@@ -19,6 +19,16 @@ keyword:openspeedtest
 keyword:speedchecker
 keyword:iperf
 
+#my addition
+nperf.com
+noc.kemdikbud.go.id
+fiber.google.com
+lintas.net.id
+myrepublic.co.id
+speakeasy.net
+speedcheck.org
+mncplay.id
+
 #for fast.com
 fast.com
 regexp:ip.*isp.*oca.*
