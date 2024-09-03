@@ -37,7 +37,6 @@ jobs:
           echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
 
           # My own addition
-          echo "RULE_BLOCKLIST=https://raw.githubusercontent.com/pengelana/blocklist/master/src/domain.txt" >> $GITHUB_ENV
           echo "RULE_TORRENT_TRACKER=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-trackres.txt" >> $GITHUB_ENV
           echo "RULE_TORRENT_WEBSITE=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt" >> $GITHUB_ENV
 
@@ -170,7 +169,6 @@ jobs:
           wget -O ./community/data/rule-ipcheck $RULE_IPCHECK
 
           # Process my own addition
-          curl -sSL $RULE_BLOCKLIST | grep -Ev '^#|^$' | awk '{print "full:"$1}' >./community/data/rule-blocklist
           wget -O ./community/data/rule-torrent-tracker $RULE_TORRENT_TRACKER
           wget -O ./community/data/rule-torrent-website $RULE_TORRENT_WEBSITE
 
