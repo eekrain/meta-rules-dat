@@ -72,7 +72,6 @@ whatsmyip.org
 ipcost.com
 ip.me
 whatismypublicip.com
-ifconfig.co
 bigdatacloud.com
 browserleaks.com
 ip4.me
@@ -94,12 +93,45 @@ dns-leak.com
 dnsleaktest.org
 
 #myown stuff
-nordvpn.com
-expressvpn.com
-surfshark.com
 ipaddress.my
 myip.ms
 2ip.io
+ip.zscaler.com
+astrill.com
+ipxo.com
+torguard.net
+ventraip.com
+mxtoolbox.com
+kinsta.com
+uptrends.com
+geotargetly.com
+geonode.com
+greengeeks.com
+hide.me
+f-secure.com
+name.com
+where-am-i.com
+cleantalk.org
+hotstar.ch
+namecheap.com
+dataenligne.com
+ipvoid.com
+ploi.io
+hostdime.com
+mon-ip.com
+thebreakdown.xyz
+
+#fkin hell why are u checking ip
+nordvpn.com
+expressvpn.com
+surfshark.com
+privateinternetaccess.com
+veepn.com
+tunnelbear.com
+ipvanish.com
+hidemyass.com
+avast.com
+hotspotshield.com
 
 #keyword
 keyword:whatismyip
@@ -116,6 +148,12 @@ keyword:dnsleak
 keyword:dnschecker
 keyword:dns-leak
 keyword:vpn
+keyword:ifconfig
+keyword:ipconfig
+keyword:ionos
+keyword:hide
+keyword:seo
+keyword:proxy
 
 #regexp
 regexp:ip.*my|my.*ip
@@ -130,4 +168,6 @@ regexp:ip.*api|api.*ip
 regexp:ip.*info|info.*ip
 regexp:ip.*data|data.*ip
 regexp:ip.*who|who.*ip
+regexp:ip.*geo|geo.*ip
+regexp:ip.*loc|loc.*ip
 regexp:api.*who|who.*api
