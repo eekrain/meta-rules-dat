@@ -31,4 +31,3 @@ mncplay.id
 
 #for fast.com
 fast.com
-regexp:ip.*isp.*oca.*
