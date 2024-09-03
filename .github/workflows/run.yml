@@ -33,7 +33,7 @@ jobs:
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
           echo "RULE_STREAMING=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
           echo "URLTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
-          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_speedtest.txt" >> $GITHUB_ENV
+          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-speedtest.txt" >> $GITHUB_ENV
           echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
 
           # My own addition
