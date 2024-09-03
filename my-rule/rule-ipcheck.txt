@@ -127,6 +127,7 @@ browsec.com
 
 #fkin hell why are u checking ip
 nordvpn.com
+nordcdn.com
 expressvpn.com
 surfshark.com
 privateinternetaccess.com
@@ -158,6 +159,7 @@ keyword:ionos
 keyword:hide
 keyword:seo
 keyword:proxy
+keyword:nordvpn
 
 #regexp
 regexp:ip.*my|my.*ip
