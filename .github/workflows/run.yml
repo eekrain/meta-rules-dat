@@ -33,12 +33,14 @@ jobs:
           echo "RULE_BANK_ID=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_bank-id.txt" >> $GITHUB_ENV
           echo "RULE_STREAMING=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/rule_streaming.txt" >> $GITHUB_ENV
           echo "URLTEST=https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/rule/urltest.txt" >> $GITHUB_ENV
-          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-speedtest.txt" >> $GITHUB_ENV
-          echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
 
           # My own addition
           echo "RULE_TORRENT_TRACKER=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-trackres.txt" >> $GITHUB_ENV
           echo "RULE_TORRENT_WEBSITE=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt" >> $GITHUB_ENV
+          echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-speedtest.txt" >> $GITHUB_ENV
+          echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
+          echo "RULE_PORN=https://nsfw.oisd.nl/dnsmasq" >> $GITHUB_ENV
+          echo "RULE_ADS=https://o0.pages.dev/Pro/dnsmasq.conf" >> $GITHUB_ENV
 
         shell: bash
 
@@ -171,6 +173,8 @@ jobs:
           # Process my own addition
           wget -O ./community/data/rule-torrent-tracker $RULE_TORRENT_TRACKER
           wget -O ./community/data/rule-torrent-website $RULE_TORRENT_WEBSITE
+          curl -sSL $RULE_PORN | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-porn
+          curl -sSL $RULE_ADS | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-ads
 
       - name: merge 'ios_rule_script/SteamCN'
         env:
