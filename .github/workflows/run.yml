@@ -41,7 +41,6 @@ jobs:
           echo "RULE_TORRENT_WEBSITE=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt" >> $GITHUB_ENV
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-speedtest.txt" >> $GITHUB_ENV
           echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
-          echo "RULE_PORN=https://nsfw.oisd.nl/dnsmasq" >> $GITHUB_ENV
           echo "RULE_ADS_MALWARE=https://o0.pages.dev/Pro/dnsmasq.conf" >> $GITHUB_ENV
 
         shell: bash
@@ -173,7 +172,6 @@ jobs:
           wget -O ./community/data/rule-torrent-website $RULE_TORRENT_WEBSITE
           wget -O ./community/data/rule-speedtest $RULE_SPEEDTEST
           wget -O ./community/data/rule-ipcheck $RULE_IPCHECK
-          curl -sSL $RULE_PORN | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-porn
           curl -sSL $RULE_ADS_MALWARE | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-ads-malware
 
       - name: merge 'ios_rule_script/SteamCN'
