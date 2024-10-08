@@ -137,6 +137,9 @@ ipvanish.com
 hidemyass.com
 avast.com
 hotspotshield.com
+google.com
+google.com.sg
+duckduckgo.com
 
 #keyword
 keyword:whatismyip
