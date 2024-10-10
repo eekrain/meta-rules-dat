@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "www.speedtest.net.cdn.cloudflare.net",
+      "domain_suffix": [
+        "ekahau.cloud",
+        "ekahau.com",
+        "openspeedtest.com",
+        "webtest.net",
+        "speedtestcustom.com",
+        "loadingtest.com",
+        "testmy.net",
+        "speedtest.net",
+        "wifiman.com",
+        "wifiman.me",
+        "uwn.com",
+        "bandwidthplace.com",
+        "real-debrid.com",
+        "speakeasy.net",
+        "speedtest.co",
+        "pingtest.net",
+        "cachefly.net",
+        "ooklaserver.net",
+        "nperf.com",
+        "speedcheck.org",
+        "mncplay.id",
+        "fast.com",
+        "cdnst.net",
+        "cellmaps.com",
+        "ookla.com",
+        "speed.dler.io",
+        "speed.cloudflare.com",
+        "proof.ovh.net",
+        "fiber.google.com",
+        "myrepublic.co.id",
+        "broadbandspeedchecker.co.uk",
+        "lintas.net.id",
+        "noc.kemdikbud.go.id"
+      ],
+      "domain_keyword": [
+        "speedtest",
+        "speedtestcustom",
+        "openspeedtest",
+        "speedchecker",
+        "iperf"
+      ],
+      "domain_regex": "^speed\\.(coe|open)\\.ad\\.[a-z]{2,6}\\.prod\\.hosts\\.ooklaserver\\.net$"
+    }
+  ]
+}
