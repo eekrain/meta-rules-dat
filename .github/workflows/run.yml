@@ -43,6 +43,7 @@ jobs:
           echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
           echo "RULE_ADS_MALWARE=https://o0.pages.dev/Lite/dnsmasq.conf" >> $GITHUB_ENV
           echo "OISD_FULL=https://big.oisd.nl/dnsmasq" >> $GITHUB_ENV
+          echo "OISD_SMALL=https://small.oisd.nl/dnsmasq" >> $GITHUB_ENV
           echo "OISD_NSFW=https://nsfw.oisd.nl/dnsmasq" >> $GITHUB_ENV
 
         shell: bash
@@ -176,6 +177,7 @@ jobs:
           wget -O ./community/data/rule-ipcheck $RULE_IPCHECK
           curl -sSL $RULE_ADS_MALWARE | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-ads-malware
           curl -sSL $OISD_FULL | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-oisd-full
+          curl -sSL $OISD_SMALL | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-oisd-small
           curl -sSL $OISD_NSFW | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > ./community/data/rule-oisd-nsfw
 
       - name: merge 'ios_rule_script/SteamCN'
