@@ -41,7 +41,7 @@ jobs:
           echo "RULE_TORRENT_WEBSITE=https://raw.githubusercontent.com/im-sm/Pi-hole-Torrent-Blocklist/main/all-torrent-websites.txt" >> $GITHUB_ENV
           echo "RULE_SPEEDTEST=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-speedtest.txt" >> $GITHUB_ENV
           echo "RULE_IPCHECK=https://raw.githubusercontent.com/eekrain/meta-rules-dat/master/my-rule/rule-ipcheck.txt" >> $GITHUB_ENV
-          echo "RULE_ADS_MALWARE=https://o0.pages.dev/Pro/dnsmasq.conf" >> $GITHUB_ENV
+          echo "RULE_ADS_MALWARE=https://o0.pages.dev/Lite/dnsmasq.conf" >> $GITHUB_ENV
           echo "OISD_FULL=https://big.oisd.nl/dnsmasq" >> $GITHUB_ENV
           echo "OISD_NSFW=https://nsfw.oisd.nl/dnsmasq" >> $GITHUB_ENV
 
